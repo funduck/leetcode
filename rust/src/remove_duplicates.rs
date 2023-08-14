@@ -27,3 +27,20 @@ impl Solution {
         nums.len() as i32
     }
 }
+
+#[cfg(test)]
+mod test {
+    use crate::Solution;
+
+    #[test]
+    fn remove_duplicates() {
+        for (input, expected, expected_output) in
+            [([1, 2, 2, 3, 4, 5, 5, 6], [1, 2, 3, 4, 5, 6], 6)]
+        {
+            let mut v = Vec::from(input);
+            let res = Solution::remove_duplicates(&mut v);
+            assert_eq!(res, expected_output);
+            assert_eq!(v, Vec::from(expected))
+        }
+    }
+}

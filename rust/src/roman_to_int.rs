@@ -50,3 +50,15 @@ impl Solution {
             .1
     }
 }
+
+#[cfg(test)]
+mod test {
+    use crate::Solution;
+
+    #[test]
+    fn roman_to_int() {
+        for (input, expected) in [("XVII", 17), ("MDCLXV", 1665)] {
+            assert_eq!(Solution::roman_to_int(String::from(input)), expected);
+        }
+    }
+}

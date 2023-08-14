@@ -22,3 +22,21 @@ impl Solution {
         return strs[0].to_string();
     }
 }
+
+#[cfg(test)]
+mod test {
+    use crate::Solution;
+
+    #[test]
+    fn longest_common_prefix() {
+        for (input, expected) in [(["flowers", "flower", "flowder"], "flow")] {
+            let res = Solution::longest_common_prefix(Vec::from(
+                input
+                    .iter()
+                    .map(|s| String::from(*s))
+                    .collect::<Vec<String>>(),
+            ));
+            assert_eq!(res, expected);
+        }
+    }
+}
