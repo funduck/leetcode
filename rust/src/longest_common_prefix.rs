@@ -6,7 +6,7 @@ impl Solution {
             return String::from("");
         }
         if strs.len() == 1 {
-            return strs[0].to_string();
+            return strs[0].clone();
         }
 
         let mut iters = strs[1..].iter().map(|s| s.chars()).collect::<Vec<_>>();
@@ -19,7 +19,7 @@ impl Solution {
             }
         }
 
-        return strs[0].to_string();
+        return strs[0].clone();
     }
 }
 
