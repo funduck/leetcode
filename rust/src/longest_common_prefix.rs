@@ -1,3 +1,5 @@
+use std::str::Chars;
+
 use crate::Solution;
 
 impl Solution {
@@ -9,10 +11,11 @@ impl Solution {
             return strs[0].clone();
         }
 
-        let mut iters = strs[1..].iter().map(|s| s.chars()).collect::<Vec<_>>();
+        let first_iter = strs[0].chars();
+        let mut rest_iters: Vec<Chars> = strs[1..].iter().map(|s| s.chars()).collect();
 
-        for (i, c) in strs[0].chars().enumerate() {
-            for iter in iters.iter_mut() {
+        for (i, c) in first_iter.enumerate() {
+            for iter in rest_iters.iter_mut() {
                 if iter.next() != Some(c) {
                     return strs[0][..i].to_string();
                 }
