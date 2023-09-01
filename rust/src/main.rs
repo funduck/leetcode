@@ -1,6 +1,7 @@
 mod is_palindrome;
 mod longest_common_prefix;
 mod remove_duplicates;
+mod remove_duplicates_list;
 mod roman_to_int;
 
 struct Solution {}
