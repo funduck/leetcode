@@ -9,7 +9,7 @@ pub struct ListNode {
 
 impl ListNode {
     fn from(ar: Vec<i32>) -> Option<Box<ListNode>> {
-        ar.iter().rev().fold(None, |acc, i| {
+        ar.iter().rfold(None, |acc, i| {
             Option::Some(Box::new(ListNode { val: *i, next: acc }))
         })
     }

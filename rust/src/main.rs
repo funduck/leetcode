@@ -1,5 +1,7 @@
 mod is_palindrome;
 mod longest_common_prefix;
+mod merge_sorted_array;
+mod plus_one;
 mod remove_duplicates;
 mod remove_duplicates_list;
 mod roman_to_int;
